@@ -8,7 +8,88 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Inicio el repositorio</h1>
+    <main class="main-container">
+        <header class="header-container">
+            <img class="header-container__menu" src="./assets/img/icon-menu.svg" alt="icono menu hamburguesa">
+            <img class="header-container__logo" src="./assets/img/logo.svg" alt="logo de la empresa">
+            <nav class="navbar">
+                <!--Elementos del menu. Como estamos diseñando en Mobile First, estos elementos inicialmente estan ocultos-->
+                <ul class="navbar__items">
+                    <li><a class="navbar__link" href="#">Iphone 12</a></li>
+                    <li><a class="navbar__link" href="#">Iphone 13</a></li>
+                    <li><a class="navbar__link" href="#">Iphone 14</a></li>
+                    <li><a class="navbar__link" href="#">About</a></li>
+                    <li><a class="navbar__link" href="#">Contactanos</a></li>
+                </ul>
+            </nav> 
+            
+            <!--Inicio modal navbar (barra de navegacion en menu hamburguesa)-->
+            <div class="modal-navbar__background"> <!-- Capa que oscurece la pagina cuando se abre el menu hamburguesa-->
+                <nav class="modal-navbar">
+                    <!--Elementos del menu-->
+                    <img class="modal-navbar__close-icon" src="./assets/img/icon-close.svg" alt="">
+                    <ul class="modal-navbar__items">
+                        <li><a class="modal-navbar__link" href="#">Collections</a></li>
+                        <li><a class="modal-navbar__link" href="#">Men</a></li>
+                        <li><a class="modal-navbar__link" href="#">Women</a></li>
+                        <li><a class="modal-navbar__link" href="#">About</a></li>
+                        <li><a class="modal-navbar__link" href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--Fin modal navbar (barra de navegacion en menu hamburguesa)-->
+
+            <div class="header-container__carrito-avatar">
+                <!--Contenedor del avatar y del carrito-->
+                <div class="header-container__carrito">
+                    <!--Acumulador de compras sobre el carrito (1 solo elemento)-->
+                    <div class="header-container__carrito--notif">0</div>
+                    <img src="./assets/img/icon-cart.svg" alt="">
+                </div>
+                <img class="header-container__avatar" src="./assets/img/image-avatar.png" alt="">
+            </div>
+        </header>
+
+        <section class="content">
+            <!--Contenedor de la galeria de imagenes y de la descripcion (titulo, subtitulo, precio y cantidad)-->
+            <article class="gallery">
+                <div class="gallery__img-container">
+                    <!--Contenedor de la imagen y de los botones prev & next-->
+                    <img class="gallery__previous" src="./assets/img/icon-previous.svg" alt="previous">
+                    <img class="gallery__next" src="./assets/img/icon-next.svg" alt="next">
+                    <!-- La imagen se va a agregar como fondo desde css -->
+                </div>
+                <div class="gallery__thumbnails">
+                    <!--Contenedor de las miniaturas de la galeria-->
+                    <img id="1" class="gallery__thumbnail" src="./assets/img/iphone-14-pro-max-uno-thumbnail.jpg" alt="thumbnail-1">
+                    <img id="2" class="gallery__thumbnail" src="./assets/img/iphone-14-pro-max-dos-thumbnail.jpg" alt="thumbnail-2">
+                    <img id="3" class="gallery__thumbnail" src="./assets/img/iphone-14-pro-max-tres-thumbnail.jpg" alt="thumbnail-3">
+                    <img id="4" class="gallery__thumbnail" src="./assets/img/iphone-14-pro-max-cuatro-thumbnail.jpg" alt="thumbnail-4">
+                </div>
+            </article>
+            
+            <article class="details">
+                <!--Contenedor de la marca, nombre del producto y descripcion--> 
+                <h2 class="details__company">Maravilla tras maravilla</h2>
+                <h2 class="details__title">iPhone 14 y iPhone 14 Plus</h2>
+                <p class="details__description">La mayor duración de batería en un iPhone, cámara nivel pro, fotos nivel wow, más resistente que cualquier vidrio de smartphone, chip A15 Bionic, Velocidad para rato.</p>
+                <div class="details__prices">
+                    <!--Contenedor de los precios-->
+                    <p class="details__now">$1000.00 <span class="details__discount">50%</span></p>
+                    <p class="details__before">$1200.00</p>
+                </div>
+                <div class="details__product-quantity">
+                    <!--Contenedor de la cantidad de productos-->
+                    <div class="input">
+                        <img class="input__minus" src="./assets/img/icon-minus.svg" alt="minus">
+                        <input class="input__number" type="text" value="0">
+                        <img class="input__plus" src="./assets/img/icon-plus.svg" alt="plus">
+                    </div>
+                    <button class="details__button"><img src="./assets/img/icon-cart-white.svg" alt="">Agregar al carrito</button>
+                </div>
+            </article>
+        </section>
+
     <script src="./main.js"></script>
 </body>
 </html>
