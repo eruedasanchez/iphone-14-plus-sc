@@ -71,7 +71,7 @@
             <article class="details">
                 <!--Contenedor de la marca, nombre del producto y descripcion--> 
                 <h2 class="details__company">Maravilla tras maravilla</h2>
-                <h2 class="details__title">iPhone 14 y iPhone 14 Plus</h2>
+                <h2 class="details__title">iPhone 14 Pro Max</h2>
                 <p class="details__description">La mayor duración de batería en un iPhone, cámara nivel pro, fotos nivel wow, más resistente que cualquier vidrio de smartphone, chip A15 Bionic, Velocidad para rato.</p>
                 <div class="details__prices">
                     <!--Contenedor de los precios-->
@@ -89,6 +89,30 @@
                 </div>
             </article>
         </section>
+
+        <!-- Inicio cart modal cuando agregamos un producto al carrito-->
+        <div class="carrito-modal">
+            <p class="carrito-modal__title">Carrito</p>
+            <div class="carrito-modal__checkout-container">
+                <!--Contenedor de la imagen, titulo y cantidad comprada y boton de compra-->
+                <div class="carrito-modal__details-container">
+                    <img class="carrito-modal__img" src="./assets/img/iphone-14-pro-max-tres-thumbnail.jpg" alt="">
+                    <div>
+                        <p class="carrito-modal__product">iPhone 14 Pro Max</p>
+                        <p class="carrito-modal__price">$125.00 x3 <span>$375.00</span></p>
+                    </div>
+                    <img class="carrito-modal__delete" src="./assets/img/icon-delete.svg" alt="deshacer compra">
+                </div>
+                <button class="carrito-modal__checkout">Confirmar</button>
+            </div>
+        </div>
+        <!-- Fin cart modal cuando agregamos un producto al carrito-->
+
+
+
+    </main>
+
+
 
     <script src="./main.js"></script>
 </body>
