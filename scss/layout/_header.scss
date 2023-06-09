@@ -7,7 +7,6 @@
     &__navegation{
         width: 175px;
         height: 100%; // crece hasta el limite para que al aplicarle hover lo haga sobre la linea gris
-        border: 4px solid orange;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -55,8 +54,49 @@
 
 .navbar{
     display: none; // se oculta porque estoy en version mobile
+    width: 400px;
+    &__items{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__link{
+        text-decoration: none;
+        color: $dark-grayish-blue;
+        display: block; // como el link es un elemento de linea, no puedo modificarle ancho y alto pero con display block si
+        height: 112px;
+        padding-top: 42px;
+        &:hover{
+            border-bottom: 4px solid $purple;
+        }
+    }
 }
 
-.modal-navbar__background{
-    display: none; // se oculta porque estoy en version mobile y se abre cuando se clickea el menu hamburguesa
+.modal-navbar{
+    // display: none; // se oculta porque estoy en version mobile y se abre cuando se clickea el menu hamburguesa
+    background-color: $white;
+    width: 250px;
+    height: 100%;
+    padding: 28px 24px;
+    &__background{
+        @include modalBackground;
+    }
+    &__items{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 200px;
+        list-style: none;
+        margin-top: 50px;
+    }
+    &__link{
+        text-decoration: none;
+        color: $very-dark-blue;
+        font-weight: 700;
+        font-size: 1.1em;
+
+    }
+    &__close-icon:hover{
+        cursor: pointer;
+    }
 }

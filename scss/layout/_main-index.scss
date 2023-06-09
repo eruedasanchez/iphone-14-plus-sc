@@ -2,4 +2,5 @@
     width: 375px;
     border: 2px solid black;
     margin: auto; // Centra el contenedor
+    position: relative; // para que la modal navbar referencie a el
 }
