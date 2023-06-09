@@ -23,6 +23,12 @@
     .navbar{
         display: block; // se muestra en version desktop
     }
+
+    .gallery{
+        &__thumbnails{
+            display: block;
+        }
+    }
 }
 
 
