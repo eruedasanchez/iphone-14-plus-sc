@@ -1,0 +1,62 @@
+.header-container{
+    height: 68px;                   // medido con programa
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // genera un espacio entre los elementos contenidos
+    padding: 0 24px;                // arriba-abajo izquieda-derecha
+    &__navegation{
+        width: 175px;
+        height: 100%; // crece hasta el limite para que al aplicarle hover lo haga sobre la linea gris
+        border: 4px solid orange;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__menu{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__carrito-avatar{
+        width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__carrito{
+        position: relative; // para el contador de compras haga referencia al elemento carrito
+        &--notif{
+            display: none; // solo aparece cuando se realice una compra
+            background-color: $purple;
+            width: 15px;
+            height: 12px;
+            border-radius: 16px;
+            position: absolute; // con absolute, puedo modificar su posicion (eje x y eje y)
+            top: -2px;  // empuja de arriba hacia abajo
+            right: -5px; // empuja de derecha a izquierda
+            font-size: 0.6em;
+            text-align: center;
+            color: $white;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+
+    }
+    &__avatar{
+        width: 24px;
+        &:hover{
+            cursor: pointer;
+            border: 2.5px solid $purple;
+            border-radius: 50%;
+        }
+    }
+}
+
+.navbar{
+    display: none; // se oculta porque estoy en version mobile
+}
+
+.modal-navbar__background{
+    display: none; // se oculta porque estoy en version mobile y se abre cuando se clickea el menu hamburguesa
+}

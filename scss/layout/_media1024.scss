@@ -1,0 +1,25 @@
+@media(min-width:1115px){
+    .main-container{
+        width: 1115px;
+    }
+
+    .header-container{
+        height: 112px;
+        border-bottom: 1px solid $grayish-blue; // linea gris es version desktop
+        &__navegation{
+            width: 590px;
+        }
+        &__menu{
+            display: none; // se borra el menu hamburguesa en version desktop
+        }
+        &__carrito-avatar{
+            width: 125px;
+        }
+        &__avatar{
+            width: 48px;
+        }
+    }
+}
+
+
+
