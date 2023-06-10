@@ -28,19 +28,56 @@ let lastValue = parseInt(cartNotification.innerText);
 addToCartBtn.addEventListener('click', () => {
     lastValue += userInputNumber;                                                         // suma la cantidad actual y la anterior (no los pisa)
     cartNotification.innerText = lastValue;
-    cartNotification.style.display = 'block';                                             // .style cambia los estilos y .display de la prop display unicamente 
-    priceModal.innerHTML = `$1000.00 x${lastValue} <span>$${1000 * lastValue}</span>`;    // actualizacion del precio al ir aumentando la cantidad      
+    cartNotification.style.display = 'block';
+    drawProductInModal(); // cuando se elimina el producto, se puedan volver a cargar productos                                             // .style cambia los estilos y .display de la prop display unicamente 
 });
 
 /* Mostrar el modal con el detalle del carrito */
 
 const cartIconBtn = document.querySelector('.header-container__carrito');
 const cartModal = document.querySelector('.carrito-modal');
-let priceModal = document.querySelector('.carrito-modal__price');
+// let priceModal = document.querySelector('.carrito-modal__price');
+const productContainer = document.querySelector('.carrito-modal__checkout-container');
 
 cartIconBtn.addEventListener('click', () => {
     cartModal.classList.toggle('show');                                     // .toggle: si existe la clase, la quita, si no, la agrega
+    
+    if(lastValue == 0){
+        drawProductInModal();
+    }
 });
+
+
+
+
+/******************************* FUNCIONES *******************************/
+
+/* Borrar el contenido del carrito */
+
+function deleteProduct(){
+    const deleteProductBtn = document.querySelector('.carrito-modal__delete');
+    deleteProductBtn.addEventListener('click', () => {
+        productContainer.innerHTML = '<p class="cart-empty">El carrito esta vacio</p>';
+        lastValue = 0;
+        cartNotification.innerText = lastValue;
+    });
+}
+
+function drawProductInModal(){
+    productContainer.innerHTML = `
+        <div class="carrito-modal__details-container">
+            <img class="carrito-modal__img" src="./assets/img/iphone-14-pro-max-tres-thumbnail.jpg" alt="">
+            <div>
+                <p class="carrito-modal__product">iPhone 14 Pro Max</p>
+                <p class="carrito-modal__price">$1000.00 x3 <span>$375.00</span></p>
+            </div>
+            <img class="carrito-modal__delete" src="./assets/img/icon-delete.svg" alt="deshacer compra">
+        </div>
+        <button class="carrito-modal__checkout">Confirmar</button>`;
+        let priceModal = document.querySelector('.carrito-modal__price');
+        priceModal.innerHTML = `$1000.00 x${lastValue} <span>$${1000 * lastValue}</span>`;    // actualizacion del precio al ir aumentando la cantidad 
+        deleteProduct();
+}
 
 
 

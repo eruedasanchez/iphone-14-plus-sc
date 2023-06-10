@@ -336,6 +336,12 @@ body {
 .show {
   display: block; }
 
+.cart-empty {
+  text-align: center;
+  margin-top: 36px;
+  font-weight: 700;
+  color: #1d2025; }
+
 @media (min-width: 1115px) {
   .main-container {
     width: 1115px; }
