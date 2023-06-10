@@ -23,13 +23,28 @@ minusBtn.addEventListener('click', () => {
 
 const addToCartBtn = document.querySelector('.details__button');
 let cartNotification = document.querySelector('.header-container__carrito--notif');
+let lastValue = parseInt(cartNotification.innerText);
 
 addToCartBtn.addEventListener('click', () => {
-    let lastValue = parseInt(cartNotification.innerText);
-    lastValue += userInputNumber;                           // suma la cantidad actual y la anterior (no los pisa)
+    lastValue += userInputNumber;                                                         // suma la cantidad actual y la anterior (no los pisa)
     cartNotification.innerText = lastValue;
-    cartNotification.style.display = 'block';              // .style cambia los estilos y .display de la prop display unicamente 
+    cartNotification.style.display = 'block';                                             // .style cambia los estilos y .display de la prop display unicamente 
+    priceModal.innerHTML = `$1000.00 x${lastValue} <span>$${1000 * lastValue}</span>`;    // actualizacion del precio al ir aumentando la cantidad      
 });
+
+/* Mostrar el modal con el detalle del carrito */
+
+const cartIconBtn = document.querySelector('.header-container__carrito');
+const cartModal = document.querySelector('.carrito-modal');
+let priceModal = document.querySelector('.carrito-modal__price');
+
+cartIconBtn.addEventListener('click', () => {
+    cartModal.classList.toggle('show');                                     // .toggle: si existe la clase, la quita, si no, la agrega
+});
+
+
+
+
 
 
 

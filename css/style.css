@@ -332,6 +332,10 @@ body {
       cursor: pointer;
       border: 2px solid #7134b4; }
 
+/* Clases adicional para mostrar u ocultar cuando se producen eventos con js */
+.show {
+  display: block; }
+
 @media (min-width: 1115px) {
   .main-container {
     width: 1115px; }
