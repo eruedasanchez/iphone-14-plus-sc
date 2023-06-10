@@ -43,6 +43,8 @@ cartIconBtn.addEventListener('click', () => {
     cartModal.classList.toggle('show');                                     // .toggle: si existe la clase, la quita, si no, la agrega
     
     if(lastValue == 0){
+        productContainer.innerHTML = '<p class="cart-empty">El carrito esta vacio</p>';
+    } else {
         drawProductInModal();
     }
 });
@@ -70,6 +72,31 @@ previousGalleryBtn.addEventListener('click', () => {
     changePreviousImage(imagesContainer);
 });
 
+/* Mostrar galeria modal al click en la imagen */
+
+const imagesModal = document.querySelector('.modal-gallery__background');
+const closeModalBtn = document.querySelector('.modal-gallery__close-container');
+
+imagesContainer.addEventListener('click', () => {
+    imagesModal.style.display = 'grid';
+});
+
+closeModalBtn.addEventListener('click', () => {
+    imagesModal.style.display = 'none';
+});
+
+/* Cambiar las imagenes principales al clickear los thumbnails */
+
+let thumbnails = document.querySelectorAll('.gallery__thumbnail');
+thumbnails = [...thumbnails];                                            // convierte el node-list thumbnails a arreglo
+
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', event => {
+        imagesContainer.style.backgroundImage = `url('./assets/img/iphone-14-pro-max-${event.target.id}.jpg')`;
+    });
+});
+
+
 
 
 
@@ -96,7 +123,7 @@ function deleteProduct(){
 function drawProductInModal(){
     productContainer.innerHTML = `
         <div class="carrito-modal__details-container">
-            <img class="carrito-modal__img" src="./assets/img/iphone-14-pro-max-tres-thumbnail.jpg" alt="">
+            <img class="carrito-modal__img" src="./assets/img/iphone-14-pro-max-3-thumbnail.jpg" alt="">
             <div>
                 <p class="carrito-modal__product">iPhone 14 Pro Max</p>
                 <p class="carrito-modal__price">$1000.00 x3 <span>$375.00</span></p>
