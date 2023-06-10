@@ -47,6 +47,36 @@ cartIconBtn.addEventListener('click', () => {
     }
 });
 
+/* Activar carrousel de imagenes (version mobile) */
+
+const imagesContainer = document.querySelector('.gallery__img-container');
+const previousGalleryBtn = document.querySelector('.gallery__previous');
+const nextGalleryBtn = document.querySelector('.gallery__next');
+let imgIndex = 1;
+
+// const imagesUrls = [
+//     './assets/img/iphone-14-pro-max-1.jpg',
+//     './assets/img/iphone-14-pro-max-2.jpg',
+//     './assets/img/iphone-14-pro-max-3.jpg',
+//     './assets/img/iphone-14-pro-max-4.jpg',
+//     './assets/img/iphone-14-pro-max-5.jpg'
+// ]
+
+nextGalleryBtn.addEventListener('click', () => {
+    changeNextImage(imagesContainer);
+});
+
+previousGalleryBtn.addEventListener('click', () => {
+    changePreviousImage(imagesContainer);
+});
+
+
+
+
+
+
+
+
 
 
 
@@ -79,9 +109,22 @@ function drawProductInModal(){
         deleteProduct();
 }
 
+function changeNextImage(imgContainer){
+    if (imgIndex == 4){
+        imgIndex = 1;
+    } else {
+        imgIndex++;
+    }
+    imgContainer.style.backgroundImage = `url('./assets/img/iphone-14-pro-max-${imgIndex}.jpg')`;
+}
 
-
-
-
+function changePreviousImage(imgContainer){
+    if (imgIndex == 1){
+        imgIndex = 4;
+    } else {
+        imgIndex--;
+    }
+    imgContainer.style.backgroundImage = `url('./assets/img/iphone-14-pro-max-${imgIndex}.jpg')`;
+}
 
 
