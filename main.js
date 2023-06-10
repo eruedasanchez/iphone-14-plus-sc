@@ -96,6 +96,49 @@ thumbnails.forEach(thumbnail => {
     });
 });
 
+/* Cambiar las imagenes principales al clickear los thumbnails en modal gallery */
+
+const modalImageContainer = document.querySelector('.modal-gallery__img-container');
+let modalThumbnails = document.querySelectorAll('.modal-gallery__thumbnail');
+modalThumbnails = [...modalThumbnails];                                            // convierte el node-list thumbnails a arreglo
+
+modalThumbnails.forEach(modalthumbnail => {
+    modalthumbnail.addEventListener('click', event => {
+        modalImageContainer.style.backgroundImage = `url('./assets/img/iphone-14-pro-max-${event.target.id.slice(-1)}.jpg')`; // .slice(-1) corta desde el final 1 digito y se lo queda (m1 y se obtiene 1)  
+    });
+});
+
+/* Cambiar las imagenes principales de la galeria modal utilizando las flechas */
+
+const nextModalBtn = document.querySelector('.modal-gallery__next');
+const previousModalBtn = document.querySelector('.modal-gallery__previous');
+
+nextModalBtn.addEventListener('click', () => {
+    changeNextImage(modalImageContainer);
+});
+
+previousModalBtn.addEventListener('click', () => {
+    changePreviousImage(modalImageContainer);
+});
+
+/* Mostrar modal navbar al clickear menu hamburguesa */
+
+const hamburgerMenuBtn = document.querySelector('.header-container__menu');
+const modalNavbarBackground = document.querySelector('.modal-navbar__background');
+const modalNavbar = document.querySelector('.modal-navbar');
+const closeHamburgerMenuBtn = document.querySelector('.modal-navbar__close-icon');
+
+hamburgerMenuBtn.addEventListener('click', () => {
+    modalNavbarBackground.style.display = 'block';
+    modalNavbar.style.display = 'block';
+});
+
+/* Cerrar el menu hamburguesa al clickear close icon */
+
+closeHamburgerMenuBtn.addEventListener('click', () => {
+    modalNavbarBackground.style.display = 'none';
+    modalNavbar.style.display = 'none';
+});
 
 
 
