@@ -56,14 +56,6 @@ const previousGalleryBtn = document.querySelector('.gallery__previous');
 const nextGalleryBtn = document.querySelector('.gallery__next');
 let imgIndex = 1;
 
-// const imagesUrls = [
-//     './assets/img/iphone-14-pro-max-1.jpg',
-//     './assets/img/iphone-14-pro-max-2.jpg',
-//     './assets/img/iphone-14-pro-max-3.jpg',
-//     './assets/img/iphone-14-pro-max-4.jpg',
-//     './assets/img/iphone-14-pro-max-5.jpg'
-// ]
-
 nextGalleryBtn.addEventListener('click', () => {
     changeNextImage(imagesContainer);
 });
@@ -139,16 +131,6 @@ closeHamburgerMenuBtn.addEventListener('click', () => {
     modalNavbarBackground.style.display = 'none';
     modalNavbar.style.display = 'none';
 });
-
-
-
-
-
-
-
-
-
-
 
 /******************************* FUNCIONES *******************************/
 
