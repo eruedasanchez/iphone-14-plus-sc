@@ -1,15 +1,14 @@
 .main-container{
     width: 375px;
-    margin: auto; // Centra el contenedor
-    position: relative; // para que la modal navbar referencie a el
+    margin: auto;                                                                 // Centra el contenedor
+    position: relative;                                                          // Para que la modal navbar referencie a el
 }
 
 .gallery{
     &__img-container{
-        height: 500px;
-        width: 100%;
+        @include dimensions(100%,500px);
         background-image: url('../../assets/img/iphone-14-pro-max-1.jpg');
-        background-position-y: -35px; // hago subir la imagen de fondo hacia arriba
+        background-position-y: -35px;                                          // Hago subir la imagen de fondo hacia arriba
         background-size: cover;
         &:hover{
             cursor: pointer;
@@ -29,9 +28,8 @@
 .details{
     padding: 24px;
     &__company{
-        color: $purple;
+        @include textStyle(0.8em,$purple,none,none);
         text-transform: uppercase; // a mayusculas
-        font-size: 0.8em;
         letter-spacing: 1px; // espacio entre letra y letra
         margin-bottom: 12px;
     }
@@ -40,28 +38,24 @@
         margin-bottom: 16px;
     }
     &__description{
-        font-size: 0.94em;
-        color: $dark-grayish-blue;
+        @include textStyle(0.94em,$dark-grayish-blue,none,none);
         line-height: 24px;
         margin-bottom: 24px;
     }
     &__prices{
-        display: flex;
-        justify-content: space-between;
+        @include flexbox(row,center,space-between);
         margin-bottom: 24px;
-        align-items: center;
+        
     }
     &__now{
+        @include flexbox(row,center,none);
         font-size: 1.8em;
         font-weight: 700;
-        display: flex;
-        align-items: center;
         gap: 18px;
     }
     &__discount{
-        font-size: 0.5em;
         background-color: $pale-purple;
-        color: $purple;
+        @include textStyle(0.5em,$purple,none,none);
         padding: 4px;
         border: 4px;
     }
@@ -88,11 +82,9 @@
     &__number{
         width: 100%;
         border: none;
-        background-color: $light-grayish-blue;
-        font-size: 1.2em;
-        font-weight: 700;
         font-family: $font;
-        text-align: center;
+        background-color: $light-grayish-blue;
+        @include textStyle(1.2em,none,center,700);
         outline: none; // elimina el borde al clikear el contador
     }
     &__plus{
@@ -103,14 +95,13 @@
 
 .carrito-modal{
     display: none; // solo aperece cuando se clickea
-    width: 360px;
-    height: 260px;
+    @include dimensions(360px,260px);
+    background-color: $white;
     border-radius: 8px;
     box-shadow: 3px 3px 10px;
     position: absolute;
     top: 75px;
     right: 6px;
-    background-color: $white;
     &__title{
         font-weight: 700;
         padding-bottom: 12px;
@@ -121,15 +112,12 @@
         padding: 16px;
     }
     &__details-container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexbox(row,center,space-between);
         margin-bottom: 24px;
         color: $dark-grayish-blue;
     }
     &__img{
-        width: 50px;
-        height: 50px;
+        @include dimensions(50px,50px);
         border-radius: 4px;
     }
     &__price span{
@@ -148,13 +136,14 @@
     width: 570px;
     &__background{
         @include modalBackground;
-        display: none; // inicialmente esta oculto
+        display: none;                      // inicialmente esta oculto
         // display: grid; // cuando haga click, lo aplico
         place-content: center;
     }
     &__close-container{
-        text-align: right;
         height: 30px;
+        text-align: right;
+        
     }
     &__close{
         width: 16px;
@@ -195,17 +184,15 @@
     }
 }
 
-/* Clases adicional para mostrar u ocultar cuando se producen eventos con js */
+/* Clases adicionales para mostrar u ocultar cuando se producen eventos con js */
 
 .show{
     display: block;
 }
 
 .cart-empty{
-    text-align: center;
+    @include textStyle(none,$very-dark-blue,center,700);
     margin-top: 36px;
-    font-weight: 700;
-    color: $very-dark-blue;
 }
 
 

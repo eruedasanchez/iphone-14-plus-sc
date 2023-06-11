@@ -1,15 +1,11 @@
 .header-container{
-    height: 68px;                   // medido con programa
-    display: flex;
-    align-items: center;
-    justify-content: space-between; // genera un espacio entre los elementos contenidos
-    padding: 0 24px;                // arriba-abajo izquieda-derecha
+    @include dimensions(none,68px);
+    @include flexbox(row,center,space-between);
+    padding: 0 24px;                                // arriba-abajo izquieda-derecha
     &__navegation{
-        width: 175px;
-        height: 100%; // crece hasta el limite para que al aplicarle hover lo haga sobre la linea gris
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include dimensions(175px,100%);
+        // height: 100%; // crece hasta el limite para que al aplicarle hover lo haga sobre la linea gris
+        @include flexbox(row,center,space-between);
     }
     &__menu{
         &:hover{
@@ -17,25 +13,20 @@
         }
     }
     &__carrito-avatar{
-        width: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include dimensions(70px,none);
+        @include flexbox(row,center,space-between);
     }
     &__carrito{
-        position: relative; // para el contador de compras haga referencia al elemento carrito
+        position: relative;                                     // para el contador de compras haga referencia al elemento carrito
         &--notif{
-            display: none; // solo aparece cuando se realice una compra
+            @include dimensions(15px,12px);
+            display: none;                                      // solo aparece cuando se realice una compra
             background-color: $purple;
-            width: 15px;
-            height: 12px;
             border-radius: 16px;
-            position: absolute; // con absolute, puedo modificar su posicion (eje x y eje y)
-            top: -2px;  // empuja de arriba hacia abajo
-            right: -5px; // empuja de derecha a izquierda
-            font-size: 0.6em;
-            text-align: center;
-            color: $white;
+            position: absolute;                                 // con absolute, puedo modificar su posicion (eje x y eje y)
+            top: -2px;                                          // empuja de arriba hacia abajo
+            right: -5px;                                        // empuja de derecha a izquierda
+            @include textStyle(0.6em,$white,center,none);
         }
         &:hover{
             cursor: pointer;
@@ -53,18 +44,17 @@
 }
 
 .navbar{
-    display: none; // se oculta porque estoy en version mobile
+    display: none;                                              // se oculta porque estoy en version mobile
     width: 400px;
     &__items{
         list-style: none;
-        display: flex;
-        justify-content: space-between;
+        @include flexbox(row,none,space-between);
     }
     &__link{
+        height: 112px;
         text-decoration: none;
         color: $dark-grayish-blue;
-        display: block; // como el link es un elemento de linea, no puedo modificarle ancho y alto pero con display block si
-        height: 112px;
+        display: block;                                         // como el link es un elemento de linea, no puedo modificarle ancho y alto pero con display block si
         padding-top: 42px;
         &:hover{
             border-bottom: 4px solid $purple;
@@ -73,28 +63,22 @@
 }
 
 .modal-navbar{
-    display: none; // se oculta porque estoy en version mobile y se abre cuando se clickea el menu hamburguesa
+    @include dimensions(250px,100%);
     background-color: $white;
-    width: 250px;
-    height: 100%;
+    display: none;                                             // se oculta porque estoy en version mobile y se abre cuando se clickea el menu hamburguesa
     padding: 28px 24px;
     &__background{
         @include modalBackground;
     }
     &__items{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         height: 200px;
+        @include flexbox(column,none,space-between);
         list-style: none;
         margin-top: 50px;
     }
     &__link{
         text-decoration: none;
-        color: $very-dark-blue;
-        font-weight: 700;
-        font-size: 1.1em;
-
+        @include textStyle(1.1em,$very-dark-blue,none,700);
     }
     &__close-icon:hover{
         cursor: pointer;
